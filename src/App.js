@@ -1,7 +1,9 @@
-// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import {Route, Routes} from 'react-router-dom'
 
 function App() {
 
@@ -9,9 +11,11 @@ function App() {
 <>
 
 <Navbar title="Text Analyzer"/>
-<div className="container my-3">
-  <TextForm heading="Enter the text to analyze"/>
-</div>
+
+<Routes>
+  <Route path="/" element={<TextForm/>} />
+  <Route path="/about" element={<About/>} />
+</Routes>
 </>
 
   );
